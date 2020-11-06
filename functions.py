@@ -9,8 +9,6 @@ class Functions:
         for i in range (len(numbers)):
             if i != 0:
                 total += numbers[i]
-            else:
-                print("Why add 0?")
         return total
 
     def subtract(self, numbers):
@@ -18,8 +16,6 @@ class Functions:
         for i in range (len(numbers)):
             if i != 0:
                 total -= numbers[i]
-            else:
-                print("Why Subtract 0?")
         return total
 
     def multiply(self, numbers):
@@ -27,8 +23,6 @@ class Functions:
         for i in range (len(numbers)):
             if i != 0:
                 total *= numbers[i]
-            else:
-                print("Cannot multiply by 0")
         return total
 
     def divide(self, numbers):
@@ -36,8 +30,6 @@ class Functions:
         for i in range (len(numbers)):
             if i != 0:
                 total /= numbers[i]
-            else:
-                print("Cannot divide by 0")
         return total
 
     def modulus(self, numbers):
@@ -48,6 +40,4 @@ class Functions:
                     total = True
                 else:
                     total = False
-            else:
-                print("Cannot modulus by 0")
         return total
