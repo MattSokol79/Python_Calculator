@@ -1,52 +1,50 @@
 # Creating the calculator
+from functions import Functions
 
-class Calculator:
+class Calculator(Functions):
+    def __init__(self):
+        super().__init__()
 
-    def add(self, numbers):
-        total = numbers[0]
-        for i in range (len(numbers)):
-            if i != 0:
-                total += numbers[i]
-            else:
-                print("No need to add 0?")
-        return total
+    def calculation(self):
+        print("Select function")
+        print("1.Add")
+        print("2.Subtract")
+        print("3.Multiply")
+        print("4.Divide")
+        print("5.Modulus")
 
-    def subtract(self, numbers):
-        total = numbers[0]
-        for i in range (len(numbers)):
-            if i != 0:
-                total -= numbers[i]
-            else:
-                print("No need to subtract 0?")
-        return total
+        while True:
+            # Ask user for function
+            function = int(input("Enter what function would you like to execute (1,2,3,4,5)\n => "))
 
-    def multiply(self, numbers):
-        total = numbers[0]
-        for i in range (len(numbers)):
-            if i != 0:
-                total *= numbers[i]
-            else:
-                print("Cannot multiply by 0")
-        return total
+            if function in [1, 2, 3, 4, 5]:
+                numbers = input("What are your values?\n Format: No. No. No. \n --> ").split(" ")
 
-    def divide(self, numbers):
-        total = numbers[0]
-        for i in range (len(numbers)):
-            if i != 0:
-                total /= numbers[i]
-            else:
-                print("Cannot divide by 0")
-        return total
+                for i in range(len(numbers)):
+                    numbers[i] = int(numbers[i])
 
-    def modulus(self, numbers):
-        total = numbers[0]
-        for i in range(len(numbers)):
-            if i != 0:
-                if total % numbers[1]:
-                    total = True
+                if len(numbers) > 1:
+                    digits = True
+
+                    if digits:
+                        if function == 1:
+                            print(self.add(numbers))
+                        elif function == 2:
+                            print(self.subtract(numbers))
+                        elif function == 3:
+                            print(self.multiply(numbers))
+                        elif function == 4:
+                            print(self.divide(numbers))
+                        elif function == 5:
+                            print(self.modulus(numbers))
+                    else:
+                        print("You need to provide integer numbers!")
                 else:
-                    total = False
+                    print("You need to provide more than 1 value to calculate")
             else:
-                print("Cannot modulus by 0")
-        return total
+                print("Sorry that choice is not on the list")
+
+test = Calculator()
+
+print(test.calculation())
 
