@@ -45,17 +45,27 @@ class Calculator(Functions):
                     print("You need to provide more than 1 value to calculate")
             else:
                 print("Sorry that choice is not on the list")
-    def triangle_area(self, base, height):
-        return "Area of the triangle is " + str(0.5 * base * height)
+    def triangle_area(self):
+        base = float(input("What is the length of the base?\n -> "))
+        height = float(input("What is the length of the height?\n -> "))
+        return "Area of the triangle is:\n -> " + str(0.5 * base * height)
 
-    def cm_to_inch(self, cm):
-        return cm / 2.54
+    def cm_to_inch(self):
+        cm = float(input("What is the length in cm?\n -> "))
+        return "{:.2f}".format(cm / 2.54)
 
-    def inch_to_cm(self, inch):
-        return inch * 2.54
+    def inch_to_cm(self):
+        inches = float(input("What is the length in inches?\n -> "))
+        return "{:.2f}".format(inches * 2.54)
 
-# Calling an object of the Calculator() class
-test = Calculator()
+def main():
+    # Calling an object of the Calculator() class
+    test = Calculator()
 
-print(test.calculation())
-print(test.triangle_area(5, 6))
+    print(test.calculation())
+    print(test.triangle_area())
+    print(test.cm_to_inch())
+    print(test.inch_to_cm())
+
+if __name__ == '__main__':
+    main()
